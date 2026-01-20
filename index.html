@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="main.js" defer></script>
+    <title>Test</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="progress-wrapper" data-component="progress-wrapper">
+        <div class="progress-header">
+          <p class="progress-title">Progress</p>
+        </div>
+
+        <div class="progress-body">
+          <div class="progress-ring" data-component="progress-ring">
+            <svg class="progress-ring__svg" viewBox="0 0 100 100">
+              <circle
+                class="progress-ring__track"
+                fill="none"
+                cx="50"
+                cy="50"
+                r="45"
+              ></circle>
+              <circle
+                class="progress-ring__value"
+                fill="none"
+                cx="50"
+                cy="50"
+                r="45"
+              ></circle>
+            </svg>
+          </div>
+
+          <form class="controls" data-component="controls">
+            <div class="controls__percent">
+              <label class="controls__percent-label">
+                <input
+                  class="controls__percent-input"
+                  type="text"
+                  name="progress-percent"
+                />
+                <span>Value</span>
+              </label>
+            </div>
+
+            <div class="controls__animate">
+              <div class="controls__animate-toggle">
+                <input
+                  type="checkbox"
+                  class="controls__checkbox"
+                  id="progress-animate"
+                />
+                <label class="controls__label" for="progress-animate"></label>
+              </div>
+              <span>Animate</span>
+            </div>
+
+            <div class="controls__hide">
+              <div class="controls__hide-toggle">
+                <input
+                  type="checkbox"
+                  class="controls__checkbox"
+                  id="progress-hide"
+                />
+                <label class="controls__label" for="progress-hide"></label>
+              </div>
+              <span>Hide</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

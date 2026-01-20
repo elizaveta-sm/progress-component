@@ -1,0 +1,40 @@
+[data-component="progress-ring"] {
+  .progress-ring__svg {
+    transform: rotate(-90deg);
+    width: var(--progress-ring-size);
+    height: var(--progress-ring-size);
+  }
+
+  .progress-ring__svg circle {
+    stroke-width: 9;
+  }
+
+  .progress-ring__track {
+    stroke: var(--secondary-clr);
+  }
+
+  .progress-ring__value {
+    stroke: var(--primary-clr);
+    stroke-linecap: butt;
+  }
+}
+
+[data-component="progress-ring"].is-animated .progress-ring__value {
+  animation: spin 2s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 568px) {
+  [data-component="progress-ring"] {
+    padding: 1rem 0 0 1.5rem;
+  }
+}
