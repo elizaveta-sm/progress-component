@@ -1,0 +1,9 @@
+:root {
+  --primary-clr: #1169ff;
+  --secondary-clr: #eaf0f6;
+
+  --progress-control-width: 3.25rem;
+  --progress-control-border-radius: 1.875rem;
+
+  --progress-ring-size: 8.75rem;
+}

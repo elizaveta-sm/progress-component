@@ -1,4 +1,8 @@
+import { progressTemplate } from "./progress-template.js";
+
 export const createProgress = (rootElement) => {
+  rootElement.innerHTML = progressTemplate;
+
   const progressValue = rootElement.querySelector(".progress-ring__value");
   const circumference = progressValue.getTotalLength();
 
@@ -7,7 +11,7 @@ export const createProgress = (rootElement) => {
 
   let isAnimated = false;
 
-  const setProgress = (value) => {
+  const setValue = (value) => {
     if (typeof value !== "number") return;
     if (isAnimated) return;
 
@@ -30,18 +34,18 @@ export const createProgress = (rootElement) => {
     progressValue.style.strokeDashoffset = offset;
   };
 
-  const hideProgress = (isHidden) => {
+  const setHidden = (isHidden) => {
     rootElement.style.visibility = isHidden ? "hidden" : "visible";
   };
 
-  const animateProgress = (isAnimationEnabled) => {
-    isAnimated = isAnimationEnabled;
-    rootElement.classList.toggle("is-animated", isAnimationEnabled);
+  const setAnimated = (isAnimated) => {
+    isAnimated = isAnimated;
+    rootElement.classList.toggle("is-animated", isAnimated);
   };
 
   return {
-    setProgress,
-    hideProgress,
-    animateProgress,
+    setValue,
+    setHidden,
+    setAnimated,
   };
 };

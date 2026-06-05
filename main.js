@@ -1,22 +1,23 @@
-import { createProgress } from "./progressRing.js";
-import { createProgressControls } from "./controls.js";
+import { createProgress } from "./components/progress/progress.js";
+import { createProgressControls } from "./components/controls/controls.js";
 
 const progressRoot = document.querySelector('[data-component="progress-ring"]');
 const controlsRoot = document.querySelector('[data-component="controls"]');
 
 const progress = createProgress(progressRoot);
-progress.setProgress(0);
+progress.setValue(0);
 
 const controls = createProgressControls(controlsRoot);
 
 controls.onChange((value) => {
-  progress.setProgress(value);
+  progress.setValue(value);
 });
 
-controls.onAnimateChecked((isAnimated) => {
-  progress.animateProgress(isAnimated);
+controls.onAnimateChange((isAnimated) => {
+  progress.setAnimated(isAnimated);
+  controls.setDisabled(isAnimated);
 });
 
-controls.onHideChecked((isHidden) => {
-  progress.hideProgress(isHidden);
+controls.onHideChange((isHidden) => {
+  progress.setHidden(isHidden);
 });

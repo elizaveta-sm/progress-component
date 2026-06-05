@@ -24,6 +24,11 @@
     font-weight: 600;
   }
 
+  .controls__percent-input:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+
   .controls__label {
     display: flex;
     align-items: center;

@@ -19,16 +19,20 @@ export const createProgressControls = (rootElement) => {
       });
     },
 
-    onAnimateChecked: (handler) => {
+    onAnimateChange: (handler) => {
       animateCheckbox.addEventListener("change", (e) => {
         handler(e.target.checked);
       });
     },
 
-    onHideChecked: (handler) => {
+    onHideChange: (handler) => {
       hideCheckbox.addEventListener("change", (e) => {
         handler(e.target.checked);
       });
+    },
+
+    setDisabled: (isDisabled) => {
+      percentInput.disabled = isDisabled;
     },
   };
 };

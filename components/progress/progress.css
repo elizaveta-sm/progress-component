@@ -16,6 +16,9 @@
   .progress-ring__value {
     stroke: var(--primary-clr);
     stroke-linecap: butt;
+    transition:
+      stroke-dashoffset 0.05s ease,
+      stroke-dasharray 0.05s ease;
   }
 }
 
